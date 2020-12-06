@@ -1,0 +1,209 @@
+body{
+background-color: white;
+border-radius: 2px;
+background-size: cover;
+background-position: center;
+font-family:montserrat;
+height: 100vh;
+margin: 0;
+}
+*{
+	padding:0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+.header1{
+	width: 100%;
+	height: 50px;
+	background-color:#b33771;
+	border-top-right-radius:10px;
+	margin-top: 10px;
+}
+.header{
+	width: 100%;
+	height: 2px;
+	color: white;
+
+}
+.h2 a{
+	color: white;
+}
+.h2 a:hover{
+	color:black;
+}
+.h1 p:hover{
+	color: black;
+}
+.dropdown{
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 200px;
+	margin-top: 163px;
+	background-color:#2e86de;
+	transform: translateX(0px);
+	color: white;
+	border-radius: 10px;
+	list-style: none;
+	padding: 20px;
+}
+
+.dropdown li{
+color: #fff;
+list-style: none;
+border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.dropdown li a{
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 20px;
+}
+.drodown li a{
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 20px;
+}
+input[type="checkbox"]{
+	-webkit-appearance:none;
+	visibility: hidden;
+	display: flex;
+	position: absolute;
+	top: 22px;
+	left: 15px;
+
+}
+input[type="checkbox"]:checked ~ .bar .top{
+transform: rotate(-45deg);
+width: 42px;
+transform-origin: right;
+top: -5px;
+}
+input[type="checkbox"]:checked ~ .bar .bottom{
+transform: rotate(45deg);
+width: 42px;
+transform-origin: right;
+top: 25px;
+}
+input[type="checkbox"]:checked ~ .bar .middle{
+transform: rotate(45deg);
+opacity: 0;
+}
+.bar{
+	position: relative;
+	cursor: pointer;
+	display: flex;
+}
+.bar .top{
+	bottom:-10px;
+	height: 5px;
+	width: 40px;
+	background: black;
+	border-radius: 50px;
+	position: absolute;
+	transition: 0.3s ease;
+}
+.bar .middle{
+	top: 15px;
+	height: 5px;
+	width: 40px;
+	background: black;
+	border-radius: 50px;
+	position: absolute;
+	transition: 0.3s ease;
+}
+
+.bar .bottom{
+	top: 25px;
+	height: 5px;
+	width: 40px;
+	background: black;
+	border-radius: 50px;
+	position: absolute;
+	transition: 0.3s ease;
+}
+
+.left{
+	font-size: 30px;
+	float: left;
+	padding: 20px;
+	color: white;
+}
+
+.right{
+    list-style: none;
+    color: white;
+    margin:0;
+    padding: 0;
+}
+.right li{
+    text-decoration: none;
+    background-color: black;
+    display: inline-table;
+    height: 80px;
+    width: 160px;
+    padding-top: 10px;
+    text-align: center;
+    opacity: .9;
+    font-size: 30px;
+    border-radius:5px;
+}
+.right li:hover{
+    background-color:red;
+    color: white;
+    height: 80px;
+
+}
+.right li .drop li{
+    display: none;
+}
+.right li:hover .drop li{
+    display: block;
+
+}
+.right li .drop li a{
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+.section{
+	margin-top: 100px;
+	height: 500px;
+	background-image: url(p1.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: 5s;
+
+	 animation-name: animate;
+	 animation-direction: alternate-reverse;
+	 animation-duration:30s ;
+	 animation-fill-mode:forwards; ;
+	 animation-iteration-count:infinite; ;
+	 animation-play-state: running;
+	 animation-timing-function:ease-in-out;
+
+}
+.animation{
+	width: 100px;
+	height: 100px;
+	position: relative;
+	background: red;
+	animation-name: anime;
+	animation-duration: 4s;
+	animation-delay: 2s;
+	border: 2px solid black;
+	animation-iteration-count: 100;
+}
+ @keyframes animate{
+ 	0% {background-image: url(p1.jpeg);}
+ 	25% { background-image: url(p2.jpeg);}
+ 	50% {background-image: url(p3.jpeg);}
+ 	75% { background-image: url(p1.jpeg); }
+ 	100% { background-image: url(p2.jpeg); }
+ }

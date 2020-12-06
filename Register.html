@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #9b59b6;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		font-family: 'mulish',sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		width: 100vw;
+		background-image: linear-gradient(to left,rgba(116,235,213,0.6))
+	}
+	.container{
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+		overflow:hidden;
+		width: 400px;
+		max-width: 100%;
+	}
+	.header{
+		background-color: #f7f7f7;
+		background:linear-gradient(to left,rgba(116,235,213,0.6),rgba(159,172,230,0)) ;
+		padding: 20px 40px;
+	}
+	.header h2{
+		color: #222;
+		font-family:'montserrat',sans-serif; 
+		font-size:24px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	.form .btn{
+		background:linear-gradient(to left,rgba(116,235,213,0.6),rgba(159,172,230,0)) ;
+		border-radius: 6px;
+		border: none;
+		outline: none;
+		color: black;
+		display: block;
+		font-family:'montserrat',sans-serif; 
+		font-size: 16px;
+		padding: 15px 0;
+		margin-top: 20px;
+		width: 100%;
+		font-weight: bold; 
+		text-transform: uppercase;
+		transition: all 1s ease;
+	}
+	.form{
+		padding: 40px;
+	}
+	.flow-control{
+		margin-bottom: 30px;
+		position: relative;
+		
+	}
+	.flow-control label{
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	.flow-control input{
+		width: 100%;
+		border: 2px solid #f0f0f0;
+		border-radius: 5px;
+		display: block;
+		font-family: 'montserrat',sans-serif; 
+		font-size: 14px;
+		padding: 12px;
+	}
+	.flow-control input:focus{
+		outline: 0;
+		border-color: #777;
+	}
+	.flow-control.success input{
+		border-color: #2ecc71;
+	}
+	.flow-control.error input{
+		border-color: #e74c3c;
+	}
+	.flow-control i{
+		position: absolute;
+		right: 8px;
+		top: 38px;
+		visibility: hidden;
+	}
+	.flow-control small{
+		color:#e74c3c;
+		position: absolute;
+		left: 0;
+		visibility: hidden;
+	
+	}
+	.flow-control.error small{
+		color: #e74c3c;
+		visibility: visible;
+	}
+	.flow-control.success i.fa-check-circle{
+		color:  #2ecc71;
+		visibility: visible;
+	}
+	.flow-control.error i.fa-exclamation-circle{
+		color:#e74c3c;
+		visibility: visible;
+	}
+</style>
+</head>
+<body>
+	
+<div class="container">
+	<div class="header">
+		<h2>Register Here</h2>
+	</div>
+	<form class="form" id="form"action="updates.html">
+		<div class="flow-control">
+			<label>Name:</label>
+			<input type="text" name="Name" id="username" placeholder="Enter your Name" autocomplete="off">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="flow-control">
+			<label>Branch:</label>
+			<input type="text" name="Name" id="branch" placeholder="Enter your Branch" autocomplete="off">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="flow-control">
+			<label>Year:</label>
+			<input type="number" name="Name" id="year" placeholder="Enter your Year" autocomplete="off">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="flow-control">
+			<label>Email:</label>
+			<input type="text" name="Name" id="email" placeholder="Enter your Email Address" autocomplete="off">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="flow-control">
+			<label>Mobile Number:</label>
+			<input type="Number" name="number" id="number" placeholder="Enter your mobile number" autocomplete="off">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="flow-control">
+			<label>College Name:</label>
+			<input type="text" name="Name" id="address" placeholder="Enter your College Name" autocomplete="off">
+			<i class="fas fa-check-circle"></i>
+			<i class="fas fa-exclamation-circle"></i>
+			<small class="sml">Error msg</small>
+		</div>
+		<input type="submit" value="SUBMIT" class="btn" name="">	
+	</div>
+</div>
+<script type="text/javascript">
+
+	const form=document.getElementById('form');
+	const username=document.getElementById('username');
+	const branch=document.getElementById('branch');
+	const year=document.getElementById('year');
+	const email=document.getElementById('email');
+	const number=document.getElementById('number');
+	const address=document.getElementById('address');
+
+	form.addEventListener('submit',(e) =>{
+		e.preventDefault();
+		validate();
+	});
+
+	function validate(){
+		const usernameValue=username.value.trim();
+		const branchValue=branch.value.trim();
+		const yearValue=year.value.trim();
+		const emailValue=email.value.trim();
+		const numberValue=number.value.trim();
+		const addressValue=address.value.trim();
+		if(usernameValue ==""){
+			setErrorfor(username,'Username cant be blank');
+		} 
+		else if(usernameValue.length <=2) {
+			setErrorfor(username,'Username cannot be less than two character');
+		}
+		else{
+		
+			setSuccessFor(username);
+		}
+		
+		if( branchValue ==""){
+			setErrorfor(branch,'branch cant be blank');
+		} 
+		else if( branchValue.length <=2) {
+			setErrorfor(branch,'branch name cannot be less than two character');
+		}
+		else{
+		
+			setSuccessFor(branch);
+		}
+		if( yearValue ==""){
+			setErrorfor(year,'Year cant be blank');
+		} 
+		else if( yearValue.length <1) {
+			setErrorfor(year,'Year cannot be less than 1 character');
+		}
+		else{
+		
+			setSuccessFor(year);
+		}
+		if(emailValue ==""){
+			setErrorfor(email,'Email cant be blank');
+		} 
+		else if(!isEmail(emailValue)) {
+			setErrorfor(email,'Not a valid Email');
+		}
+		else{
+			setSuccessFor(email);
+		}
+		if( numberValue ==""){
+			setErrorfor(number,'Mobile number cannot be Empty');
+		} 
+		else if(numberValue.length <10) {
+			setErrorfor(number,'Enter a valid mobile number');
+		}
+		else{
+			setSuccessFor(number);
+		}
+		if(addressValue ==""){
+			setErrorfor(address,'College Name cant be blank');
+		} 
+		else if(addressValue.length <=3) {
+			setErrorfor(address,'address cannot be less than two character');
+		}
+		else{
+		
+			setSuccessFor(address);
+		}
+		
+	}
+	function setErrorfor(input,message){
+		const formControl= input.parentElement;
+		const small= formControl.querySelector("small");
+		small.innerText=message;
+		formControl.className="flow-control error";
+	}
+	function setSuccessFor(input){
+
+		const formControl= input.parentElement;
+		
+		formControl.className="flow-control success";
+	}
+	function isEmail(emailValue){
+
+		var atsymbol=emailValue.indexOf('@');
+		if(atsymbol < 1) 
+		{
+			return false;
+		}
+		var dot=emailValue.lastIndexOf('.');
+		if(dot<=atsymbol + 2) return false;
+		if(dot==email.length-1) return false;
+		return true;
+
+	}
+</script>
+</body>
+</html>

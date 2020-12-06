@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: grey;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		font-family: 'mulish',sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 100vh;
+		width: 100vw;
+		background-image: linear-gradient(to left,rgba(116,235,213,0.6))
+	}
+	.container{
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+		overflow:hidden;
+		width: 400px;
+		max-width: 100%;
+	}
+	.header{
+		background-color:red;
+		background:linear-gradient(to left,rgba(100,53,130,0.6),rgba(159,172,230,0)) ;
+		padding: 20px 40px;
+	}
+	.header h2{
+		color: #222;
+		font-family:'montserrat',sans-serif; 
+		font-size:24px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	.form .btn{
+		background:linear-gradient(to left,rgba(116,235,213,0.6),rgba(159,172,230,0)) ;
+		border-radius: 6px;
+		border: none;
+		outline: none;
+		color: black;
+		display: block;
+		font-family:'montserrat',sans-serif; 
+		font-size: 16px;
+		padding: 15px 0;
+		margin-top: 20px;
+		width: 100%;
+		font-weight: bold; 
+		text-transform: uppercase;
+		transition: all 1s ease;
+	}
+	.form{
+		padding: 40px;
+	}
+	.flow-control{
+		margin-bottom: 30px;
+		position: relative;
+		
+	}
+	.forget{
+		margin-bottom: 10px;
+	}
+	.flow-control label{
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+	.flow-control input{
+		width: 100%;
+		border: 2px solid #f0f0f0;
+		border-radius: 5px;
+		display: block;
+		font-family: 'montserrat',sans-serif; 
+		font-size: 14px;
+		padding: 12px;
+	}
+	.flow-control small{
+		color:#e74c3c;
+		position: absolute;
+		left: 0;
+		visibility: hidden;
+	
+	}
+	.flow-control.error small{
+		color: #e74c3c;
+		visibility: visible;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h2>Login Here</h2>
+		</div>
+	<form class="form" id="form">
+		<div class="flow-control">
+			<label>Username or Email:</label>
+			<input type="text" name="Name" id="username" placeholder="Enter your Username" autocomplete="off">
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="flow-control">
+			<label>Password:</label>
+			<input type="Password" name="Name" id="password" placeholder="Enter your Password" autocomplete="off">
+			<small class="sml">Error msg</small>
+		</div>
+		<div class="ch" style="color: green;">
+			<p class="small" style="margin-bottom: 10px;margin-top: 10px;">1.Password must be have Lowercase letter</p>
+			<p class="Big"  style="margin-bottom: 10px;">2.Password must be have Uppercase letter</p>
+			<p class="nm"  style="margin-bottom: 10px;">3.Password must be have Number </p>
+		</div>
+
+		<input type="submit" value="SUBMIT" class="btn" name="">	
+		<div class="forget" style="margin-top: 20px;">
+			<a href="">Forget password ?</a>
+		</div>
+		<div class="account">
+			<a href="Register.html">Create a new Account</a>
+		</div>
+
+
+		<script type="text/javascript">
+		const form=document.getElementById('form');
+		const username=document.getElementById('username');
+		const password=document.getElementById('password');
+
+		form.addEventListener('submit',(e) =>{
+		e.preventDefault();
+		validate();
+		});
+
+		function validate(){
+			const usernameValue=username.value.trim();
+			const passwordValue=password.value.trim();
+
+			if(usernameValue ==""){
+				setErrorfor(username,'Username cant be blank');
+			} 
+			else if(usernameValue.value <=2) {
+				setErrorfor(username,'Username cannot be less than two character');
+			}
+			else{
+		
+				setSuccessFor(username);
+			}
+			if( passwordValue == ""){
+				setErrorfor(password,'Password cant be blank');
+			} 
+			else if(passwordValue.match(/[A-Z]/g) && passwordValue.match(/[a-z]/g) && passwordValue.match(/[0-9]/g)){
+				setSuccessFor(password);
+			}
+			else{
+				setErrorfor(password,'Password must be have Uppercase letter, Lowercase letter and Uppercase');
+			}
+	}
+
+	function setErrorfor(input,message){
+		const formControl= input.parentElement;
+		const small= formControl.querySelector("small");
+		small.innerText=message;
+		formControl.className="flow-control error";
+	}
+	function setSuccessFor(input){
+
+		const formControl= input.parentElement;
+		
+		formControl.className="flow-control success";
+	}
+
+
+
+
+
+
+		</script>
+</body>
+</html>

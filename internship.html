@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Internship.com</title>
+	<link rel="stylesheet" type="text/css" href="internship.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<script type="text/javascript">
+		function myfunction(){
+			var check = document.getElementById('checkbox');
+			var drp = document.getElementById('dropdown');
+			if(check.checked==true){
+				drp.style.display="block";
+			}
+			else{
+				drp.style.display="none";
+			}
+		}
+	</script>
+<div class="header1">
+	<div class="h1" style="color: white;font-size: 20px;padding: 10px;float: left;">
+		<p>Contact us-1800234343434</p>
+	</div>
+	<div class="h2" style="float: right;color: red;font-size: 25px; word-spacing:20px;padding: 10px;">
+			<a href="Login.html">Login</a>
+			<a href="Register.html">Register</a>
+	</div>
+
+
+</div>
+<div class="header">
+	<div class="left">
+		<label>
+			<input type="checkbox" id="checkbox" onclick="myfunction()">
+			<div class="bar">
+				<span class="top"></span>
+				<span class="middle"></span>
+				<span class="bottom"></span>
+			</div>
+		</label>
+		<ul class="dropdown" id="dropdown" style="display: none;">
+			<li><a href="internship.html" class="l1">Home</a></li>
+			<li><a href="About.html" class="l1">About</a></li>
+			<li><a href="" class="l1">Contact</a></li>
+		</ul>
+		<input type="text" style="border-radius: 20px;text-align: center;font-size: 25px;margin:0 50px;" name="search"placeholder="search">
+		<button style="border-radius: 5px;text-align: center;font-size: 25px;border: none;"><i class="fa fa-search-plus"></i></button>
+	</div>  
+	<div style="float: right;margin-top: 20px;">
+		<ul class="right">
+		<li><a href="#">Interships</a>
+			<ul class="drop">
+				<li><a href="#">Computer Science</a></li>
+				<li><a href="#">Electrical</a></li>
+				<li><a href="#">Mechanical</a></li>
+				<li><a href="#">Civil</a></li>
+			</ul>
+		</li>
+		<li><a href="Updates.html">Updates</a></li>
+		<li><a href="Preparation.html">Preparation</a></li>
+		<li><a href="Blog.html">Blog</a></li>
+		<li><a href="About.html">About</a></li>
+	</ul>
+	</div>
+	
+</div>
+
+<div class="section">
+	<div style="color: black;margin-top: 110px;float: left;padding: 20px;">
+		<h1>IF YOU WANT YOUR <br>FUTURE BRIGHT <br>THEN  START <br> LEARNING <br> WITH <br> PRACTICAL A<br> APPROACH </h1>
+	</div>
+</div>
+
+</body>
+</html>
